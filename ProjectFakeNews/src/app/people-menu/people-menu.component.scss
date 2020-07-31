@@ -1,0 +1,41 @@
+.mat-icon#teste{
+    width: 90%;
+    margin-left: -55px;
+}
+::ng-deep .mat-tab-group#menu.mat-primary .mat-ink-bar{ //ng-deep forces the style
+    background-color:#5FD44F;
+}
+::ng-deep #menu .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+    color: #5FD44F;
+}
+::ng-deep .submenu.row div{
+    flex-flow: column wrap;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+}
+::ng-deep .pagination>li>a{
+    color: #5FD44F;
+}
+::ng-deep .pagination>.active>a{
+    background-color: #5FD44F;
+    color: #ffffff;
+    border-color: #84C793;
+}
+/*----responsividade-----*/ 
+.mobile-label {
+    display: none;
+}
+
+@media(max-width: 600px) {
+    .mobile-label {
+        width: 100px;
+        display: inline-block;
+        font-weight: bold;
+        margin-top: 8px;
+    }
+    #menu{
+        display: none;
+    }
+}
+/*-------------------------*/
