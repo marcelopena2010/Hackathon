@@ -14,12 +14,21 @@ export class AppService {
     //this.isprod = false;
     //this.link = this.isprod ? 'https://portalpeoplejava.azurewebsites.net/' : "http://localhost:8080/";
     this.link = "https://hackathon-call-for-code.mybluemix.net/nlu-completo?text=";
-
-  listSearch(test) {
-    //return this.http.get<Array<any>>( `${this.link}employee/managers`);
-    return this.http.get<Array<any>>( `${this.link}`+text);
   }
 
+  setSearch(jsonform, callback){
+    /*
+    $.ajax({
+      type: "POST",
+      url: `${this.link}user/login`,
+      data: jsonform,
+      contentType: "application/json; charset=utf-8",
+      success: callback,
+    });
+    */
+  }
+
+  /*
   makeSearch(json, callback) {
     $.ajax({
       type: "POST",
@@ -31,5 +40,5 @@ export class AppService {
       error: callback
     });
   }
-
+*/
 }
