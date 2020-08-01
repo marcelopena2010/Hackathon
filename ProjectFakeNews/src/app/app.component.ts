@@ -9,8 +9,9 @@ import {NgForm} from '@angular/forms';
 export class AppComponent  {
     
   onSubmit(myForm: NgForm) {
+    let json = JSON.stringify(myForm.value);
     myForm.resetForm({
-      name: myForm.value
+      name: json
     })
   }
   
