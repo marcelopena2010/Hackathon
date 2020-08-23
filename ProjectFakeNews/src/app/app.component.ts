@@ -1,36 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import { ApiService } from './app.service';
   
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.scss' ]
 })
-export class AppComponent  {
-    
+export class AppComponent implements OnInit {
+
+  //search: any;
+
+  constructor(private apiService: ApiService ){
+    //this.getSearch();
+  }
+
+  ngOnInit() { }
+
   onSubmit(myForm: NgForm) {
+    alert("myForm: " + myForm.value);
     let json = JSON.stringify(myForm.value);
+    alert("JSON: " + json);
+    this.apiService.getParticularData(json).subscribe(dados => {
+      alert(dados);
+      console.log(dados);
+    });
     myForm.resetForm({
       search: json
     })
   }
-  
-}
+
+
 /*
-*the rest of the imports are here don't worry*
-import { ApiService } from '@api/api.service';
-
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
-})
-export class homeComponent implements OnInit {
-
-constructor( private ApiService: ApiService){
-
- JSON = this.ApiService.getParticularData();
- console.log(JSON) // returns undefined
-
+  getSearch(myForm: NgForm){
+    alert("this.search: " + myForm.value);
+    this.apiService.getParticularData(myForm.value).subscribe(dados => {
+      console.log(dados);
+    });
+  }
+*/
 }
-}*/
